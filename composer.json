@@ -1,6 +1,6 @@
 {
     "name": "eboye/laravel-nova-translation-editor",
-    "description": "A Laravel Nova tool.",
+    "description": "Laravel Nova UI for editing Database Translations",
     "keywords": [
         "laravel",
         "nova"
