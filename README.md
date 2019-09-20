@@ -2,7 +2,7 @@
 
 This is the Laravel Nova Tool for managing translations. It's still work in progress.
 
-Currently it only shows the available translations. I tend to make them editable.
+You can view all the translations. Clicking on string you can edit it and save. The mutlilevel arrays in lang files are currently not working. So if you have idea on how to solve it. Please make a pull request.
 
 It depends on [spatie/laravel-translation-loader](https://github.com/spatie/laravel-translation-loader)
 
