@@ -12,7 +12,7 @@ So first you need to install it and set it up. Then add this Tool.
 ## Installation
 
 ```bash
-composer require coderello/laravel-nova-lang
+composer require eboye/laravel-nova-translation-editor
 ```
 
 ## Usage
