@@ -23,7 +23,14 @@
                     <tbody>
                     <tr v-for="(t_object, t_path) in translation">
                         <td class="text-left">{{t_path}}</td>
-                        <td class="text-left">{{t_object}}</td>
+                        <td class="text-left">
+                            <ClickToEdit
+                                :value="t_object"
+                                :group="translation_file"
+                                :value_key="t_path"
+                                :locale="active_locale"
+                            ></ClickToEdit>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -33,10 +40,14 @@
 </template>
 
 <script>
+    import ClickToEdit from "./ClickToEdit";
+
     export default {
+        components: {ClickToEdit},
         data: () => {
             return {
                 apiURL: '/nova-vendor/laravel-nova-translation-editor/',
+                active_locale: Nova.config.locale,
                 translations: null,
                 active_tab: null
             }
