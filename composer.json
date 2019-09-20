@@ -1,0 +1,30 @@
+{
+    "name": "eboye/laravel-nova-translation-editor",
+    "description": "A Laravel Nova tool.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "spatie/laravel-translation-loader": ">=2.4 <3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eboye\\LaravelNovaTranslationEditor\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eboye\\LaravelNovaTranslationEditor\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
