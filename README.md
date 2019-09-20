@@ -1,5 +1,4 @@
-# laravel-nova-translation-editor
-Laravel Nova Translation Editor
+# Laravel Nova Translation Editor
 
 This is the Laravel Nova Tool for managing translations. It's still work in progress.
 
