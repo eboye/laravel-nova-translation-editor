@@ -20,14 +20,25 @@
                         <th class="text-left">String</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr v-for="(t_object, t_path) in translation">
+                    <tbody v-for="(t_object, t_path) in translation">
+                    <tr v-if="typeof t_object == 'string'">
                         <td class="text-left">{{t_path}}</td>
                         <td class="text-left">
                             <ClickToEdit
                                 :value="t_object"
                                 :group="translation_file"
                                 :value_key="t_path"
+                                :locale="active_locale"
+                            ></ClickToEdit>
+                        </td>
+                    </tr>
+                    <tr v-else v-for="(t_item_object, t_item_path) in t_object">
+                        <td class="text-left">{{t_path + '.' + t_item_path}}</td>
+                        <td class="text-left">
+                            <ClickToEdit
+                                :value="t_item_object"
+                                :group="translation_file"
+                                :value_key="t_path + '.' + t_item_path"
                                 :locale="active_locale"
                             ></ClickToEdit>
                         </td>
