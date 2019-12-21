@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Lang;
+use Eboye\LaravelNovaTranslationEditor\Http\Controllers\LaravelNovaTranslationEditorController;
 use Illuminate\Support\Facades\Route;
-use Spatie\TranslationLoader\LanguageLine;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,31 +14,6 @@ use Spatie\TranslationLoader\LanguageLine;
 |
 */
 
-Route::get('/index', function (Request $request) {
-    $translatables = config('trans_editor');
-    $response      = [];
-    foreach ($translatables as $translatable) {
-        $response[$translatable] = Lang::get($translatable);
-    }
-    return $response;
-});
+Route::get( '/index', LaravelNovaTranslationEditorController::class . '@index' );
 
-Route::post('/save', function (Request $request) {
-    if ($request->has(['group', 'key', 'text', 'locale'])) {
-        return LanguageLine::firstOrCreate(
-            [
-                'group' => $request->get('group'),
-                'key'   => $request->get('key')
-            ],
-            [
-                'group' => $request->get('group'),
-                'key'   => $request->get('key'),
-                'text'  => [
-                    $request->get('locale') => $request->get('text')
-                ],
-            ]
-        );
-    } else {
-        return response(null, 400);
-    }
-});
+Route::post( '/save', LaravelNovaTranslationEditorController::class . '@save' );
