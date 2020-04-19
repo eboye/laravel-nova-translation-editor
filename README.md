@@ -14,6 +14,13 @@ So first you need to install it and set it up. Then add this Tool.
 composer require eboye/laravel-nova-translation-editor
 ```
 
+### If you haven't already done, do publish Spatie/laravel-translation-loader migrations
+
+```bash
+php artisan vendor:publish --provider="Spatie\TranslationLoader\TranslationServiceProvider"
+php artisan migrate
+```
+
 ## Usage
 ### Publish Config
 Publish config file and add any of the files you have in resource/lang/ folder
