@@ -38,6 +38,18 @@ return [
 
 Just add any of the lang files you need.
 
+### Add Nova tool
+In your App\Providers\NovaServiceProvider.php, under tools, add
+
+```php
+new LaravelNovaTranslationEditor
+```
+
+and also the import of the Class
+```php
+use Eboye\LaravelNovaTranslationEditor\LaravelNovaTranslationEditor;
+```
+
 ## Screenshots
 
 ![screenshot 1](https://raw.githubusercontent.com/eboye/laravel-nova-translation-editor/master/docs/screenshot_1.png)
