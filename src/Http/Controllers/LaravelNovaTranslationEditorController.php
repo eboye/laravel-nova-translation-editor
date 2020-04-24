@@ -35,7 +35,7 @@ class LaravelNovaTranslationEditorController extends Controller {
      */
     public function save( Request $request ) {
         if ( $request->has( [ 'group', 'key', 'text', 'locale' ] ) ) {
-            return LanguageLine::firstOrCreate(
+            return LanguageLine::updateOrCreate(
                 [
                     'group' => $request->get( 'group' ),
                     'key'   => $request->get( 'key' )
