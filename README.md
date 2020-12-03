@@ -32,11 +32,13 @@ config/trans_editor.php looks like this:
 ```php
 <?php
 return [
-    'auth'
+    'groups' => [
+        'auth'
+    ]
 ];
 ```
 
-Just add any of the lang files you need.
+Just add any of the lang files you need to edit in the groups key.
 
 ### Add Nova tool
 In your App\Providers\NovaServiceProvider.php, under tools, add
