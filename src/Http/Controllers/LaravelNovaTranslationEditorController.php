@@ -19,7 +19,7 @@ class LaravelNovaTranslationEditorController extends Controller {
      * @return array
      */
     public function index( Request $request ) {
-        $translatables = config( 'trans_editor' );
+        $translatables = config( 'trans_editor.groups' );
         $response      = [];
         foreach ( $translatables as $translatable ) {
             $response[ $translatable ] = Lang::get( $translatable );

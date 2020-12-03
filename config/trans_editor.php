@@ -1,4 +1,4 @@
 <?php
 return [
-    'auth'
+    'groups' => [],
 ];
